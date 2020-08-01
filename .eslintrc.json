@@ -1,11 +1,16 @@
 {
     "env": {
         "browser": true,
-        "es2020": true
+        "es2020": true,
+        "jest": true
     },
     "extends": [
         "airbnb-base"
     ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly" 
+    },
     "parserOptions": {
         "ecmaVersion": 11,
         "sourceType": "module"
@@ -13,8 +18,9 @@
     "rules": {
         "no-restricted-syntax": [
             "error",
+            "ignorePackages",
             "LabeledStatement",
             "WithStatement"
-        ]
-   }
+            ]
+    }
 }
